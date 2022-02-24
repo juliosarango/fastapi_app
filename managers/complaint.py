@@ -3,6 +3,29 @@ from config.db import database
 
 
 class ComplaintManager:
+    """ Class to Manage the table complaint
+
+    From this class manage the operations in the table complaint
+
+    Methods:
+    --------
+
+    get_complaints(user): 
+        Return registers from complaint table depends the role of the user
+
+    create_complaint(complaint_data, user)
+        This method create a register in the complaint table. 
+
+    delete_complaint(complaint_id)
+        This method delete a register from complaint table.
+
+    approve_complaint(id)
+        This method allow approve a complaint identified by id parameter
+
+    reject_complaint(id)
+        This method allow reject a complaint identified by id parameter
+    """
+    
     @staticmethod
     async def get_complaints(user):
         q = complaint.select()

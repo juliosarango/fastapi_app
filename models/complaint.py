@@ -1,4 +1,3 @@
-from importlib.metadata import metadata
 import sqlalchemy
 from config.db import metadata
 from models.enums import State
