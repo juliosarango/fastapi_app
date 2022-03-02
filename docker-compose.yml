@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    container_name: complaint
+    hostname: complaint
+    image: postgres:12
+    restart: always
+    environment:
+        POSSTGRES_USER: complaint
+        POSTGRES_PASSWORD: complaint
+        POSTGRES_DB: complaint
+    ports:
+        - 5432:5432  
+    networks:
+      complaint:
+        ipv4_address: 30.50.0.11  
+networks:
+  complaint:
+    ipam:
+      config:
+        - subnet: 30.50.0.0/16
+        
