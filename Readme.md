@@ -61,4 +61,4 @@ uvicorn main:app --reload
    
 ![Home](images/fast_home.png)
 
-1. Test the endpoints
+7. Test the endpoints
