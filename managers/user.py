@@ -40,7 +40,7 @@ class UserManager:
         return await database.fetch_all(user.select())
 
     @staticmethod
-    async def get_user_by_email(email):
+    async def get_user_by_email(email):        
         return await database.fetch_one(user.select().where(user.c.email == email))
 
     @staticmethod

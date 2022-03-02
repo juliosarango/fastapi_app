@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from resources.routes import api_router
 from config.db import database
+from decouple import config
 
 origins = [
   "http://localhost",
@@ -9,8 +10,11 @@ origins = [
 ]
 
 
-app = FastAPI()
-app.include_router(api_router)
+app = FastAPI(
+  title = config('PROJECT_NAME'),
+  openapi_url = f"{config('API_V1_STR')}/openapi.json"
+)
+app.include_router(api_router, prefix=config('API_V1_STR'))
 app.add_middleware(
   CORSMiddleware,
   allow_origins=origins,
