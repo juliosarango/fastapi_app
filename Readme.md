@@ -3,7 +3,7 @@
 FastAPI is a Web framework for developing RESTful APIs in Python. FastAPI is based on Pydantic and type hints to validate, serialize, and deserialize data, and automatically auto-generate OpenAPI documents
 
 ## Steps for running proyect
-1. Create and activate a virtual environment. (The next commands if for unix systems). Then you must install the requirements 
+1. Create and activate a virtual environment. (The next commands is for unix systems). Then you must install the requirements 
 ```
 #create
 python3 -m venv venv
@@ -27,6 +27,10 @@ DB_HOST=
 DB_PORT=
 
 JWT_SECRET=
+API_V1_STR='/api/v1'
+  
+PROJECT_NAME='Project Name'
+PROJECT_VERSION='1.0'
 ```
 > Note: If you don't have a bd server, you can use the docker-compose.yml file to setup a postgres server.
 
@@ -41,16 +45,11 @@ alembic upgrade head
 # with the terminal in the project root directory
 export PYTHONPATH=$PWD
 # Next, execute the comand with the following options
-python3 commands/create_super_user.py -f 'firtsname' -l 'lastname' -e 'email' -p 'phone' -i 'iban' -pw 'password'
+python3 commands/create_super_user.py -f 'firtsname' -l 'lastname' 
+-e 'email' -p 'phone' -i 'iban' -pw 'password'
 
 ```
 > Note: Replace firstname, lastame, email, phone, iban and password with your data
-
-
-```
-alembic revision -m "comment"
-alembia upgrade head
-```
 
 5. Run the server
 ```
