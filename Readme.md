@@ -1,8 +1,9 @@
 # Micro services with FastAPI
 
+![FastAPI](images/logo.png)
 FastAPI is a Web framework for developing RESTful APIs in Python. FastAPI is based on Pydantic and type hints to validate, serialize, and deserialize data, and automatically auto-generate OpenAPI documents
 
-## Steps for running proyect
+## Steps for running project
 1. Create and activate a virtual environment. (The next commands if for unix systems). Then you must install the requirements 
 ```
 #create
