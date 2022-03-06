@@ -1,6 +1,6 @@
-import stat
+from http import HTTPStatus
 from typing import List
-from fastapi import APIRouter, dependencies, Depends
+from fastapi import APIRouter, Response, dependencies, Depends
 from starlette.requests import Request
 
 from managers.complaint import ComplaintManager
@@ -91,6 +91,7 @@ async def approve_complaint(complaint_id: int):
     """
 
     await ComplaintManager.approve_complaint(complaint_id)
+    return Response(status_code=HTTPStatus.NO_CONTENT.value)
 
 
 @router.put(
@@ -98,7 +99,7 @@ async def approve_complaint(complaint_id: int):
     dependencies=[Depends(oauth2_scheme), Depends(is_approver)],
     status_code=204,
 )
-async def approve_complaint(complaint_id: int):
+async def reject_complaint(complaint_id: int):
     """Reject complaint
 
     This endpoint make changes in a complaint register for change the status to reject
@@ -110,3 +111,4 @@ async def approve_complaint(complaint_id: int):
     """
 
     await ComplaintManager.reject_complaint(complaint_id)
+    return Response(status_code=HTTPStatus.NO_CONTENT.value)

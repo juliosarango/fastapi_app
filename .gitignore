@@ -26,4 +26,4 @@ archive.zip
 # vim temporary files
 *~
 .*.sw?
-
+temp_files/*

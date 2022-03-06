@@ -13,15 +13,12 @@ class BaseComplaint(BaseModel):
         A string for title field.
     - description : str
         A description of complaint
-    - photo_url : str
-        The url where the image is saved
     - amount : float    
         Amount of complaint.
     """
     
     title: str
     description: str
-    photo_url: str
     amount: float
 
 class UserBase(BaseModel):
